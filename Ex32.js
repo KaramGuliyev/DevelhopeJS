@@ -1,6 +1,14 @@
 function uncompletedNotes(notes) {
   notes
     .map((note) => {
+      // if(note.todos.filter((todo) => !todo.done)) {
+      //   return {
+      //     id: note.id,
+      //     description: note.description,
+      //     todos: note.todos.filter((todo) => !todo.done),
+      //   };
+      // }
+      
       return {
         id: note.id,
         description: note.description,
