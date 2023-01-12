@@ -8,7 +8,7 @@ function multiplyByTwo(value) {
         let finalResult = value * number
         return console.log(finalResult);;
     }  
-    inner()
+    return inner;
   }
 
-multiplyByTwo(5);
+multiplyByTwo(5)();

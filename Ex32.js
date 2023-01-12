@@ -1,5 +1,13 @@
 function uncompletedNotes(notes) {
-  // ...
+  notes
+    .map((note) => {
+      return {
+        id: note.id,
+        description: note.description,
+        todos: note.todos.filter((todo) => !todo.done),
+      };
+    })
+    .forEach((note) => console.log(note));
 }
 
 const notes = [
@@ -53,13 +61,3 @@ const notes = [
 ];
 
 uncompletedNotes(notes);
-
-notes
-  .map((note) => {
-    return {
-      id: note.id,
-      description: note.description,
-      todos: note.todos.filter((todo) => !todo.done),
-    };
-  })
-  .forEach((note) => console.log(note));

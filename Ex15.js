@@ -6,7 +6,7 @@
 
 function sayHelloName(printName) {
     console.log("Hello ");
-    printName;
+    printName("Karam")
 }
 
 function printName(userDetails) {
@@ -14,5 +14,4 @@ function printName(userDetails) {
         return console.log(userDetails);;
     },100)
 }
-
-sayHelloName(printName("Karam"))
+sayHelloName(printName)
