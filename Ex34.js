@@ -28,8 +28,7 @@ class Developer extends Person {
         this.positon = role;
     }
     introduceSelfDetailed() {
-        console.log(developer);
-        console.log(`Hello my name is ${developer.first} ${developer.last} and my position is ${this.positon}` );
+        console.log(`${developer.introduceSelf()} and my position is ${this.positon}` );
     }
 }
 
