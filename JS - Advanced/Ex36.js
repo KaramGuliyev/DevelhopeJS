@@ -5,8 +5,17 @@ class Person {
   firstName;
   lastName;
   age;
-  constructor(firstName, lastName, age) {
-    (this.firstName = firstName), (this.lastName = lastName), (this.age = age);
+
+  static fromObject(obj) {
+    return {
+      firstName: obj.firstName,
+      lastName: obj.lastName,
+      age: obj.age,
+    };
+  }
+
+  constructor(obj) {
+    (this.firstName = obj.firstName), (this.lastName = obj.lastName), (this.age = obj.age);
   }
 
   set firstName(firstName) {
@@ -23,7 +32,13 @@ class Person {
   }
 }
 
-const person = new Person("Mario", "Rossi", 25);
+const obj = {
+  firstName: "Mario",
+  lastName: "Rossi",
+  age: 25,
+};
+
+const person = new Person(Person.fromObject(obj));
 console.log(person.fullName);
 
 person.firstName = "Maria";
