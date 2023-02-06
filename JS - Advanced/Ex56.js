@@ -6,12 +6,32 @@
 
 const isLogged = true;
 
+// isLogged -> getUserDetails -> userObject
+
+class myClass {
+  constructor(err) {
+    this.err = err;
+  }
+
+  static isUserLoggedIn(isLogged) {
+    if (isLogged) {
+      return Math.random();
+    } else {
+      throw myClass.myError();
+    }
+  }
+
+  static myError(err) {
+    throw new Error(err);
+  }
+}
+
 function isLoggedIn(isLogged) {
   return new Promise((resolve, reject) => {
-    if (isLogged) {
-      resolve(Math.random());
-    } else {
-      reject(console.log("Not Logged In"));
+    try {
+      resolve(myClass.isUserLoggedIn(isLogged));
+    } catch {
+      reject(myClass.myError("User is not Logged in!"));
     }
   });
 }
@@ -19,14 +39,18 @@ function isLoggedIn(isLogged) {
 function getUserDetails(value) {
   console.log(value);
   return new Promise((resolve, reject) => {
-    if (value > 0.5) {
-      resolve({ name: "John", age: 24 });
-    } else {
-      reject(new Error("Error"));
+    try {
+      if (value > 0.5) {
+        resolve(console.log("tried and passed"), { name: "John", age: 24 });
+      }
+    } catch {
+
+      this.myError = new myError("Error");
+      return reject(console.log("ERR"), this.myError);
     }
   });
 }
 
 isLoggedIn(isLogged)
-  .then((val) => getUserDetails(val))
+  //   .then((val) => getUserDetails(val))
   .then((val) => console.log(val));
