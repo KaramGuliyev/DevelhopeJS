@@ -21,6 +21,15 @@ class myClass {
     }
   }
 
+  static getUserDetails(id) {
+    if (id > 0.5) {
+      let userDetails = { name: "John", age: 24 };
+      return userDetails;
+    } else {
+      throw myClass.myError();
+    }
+  }
+
   static myError(err) {
     throw new Error(err);
   }
@@ -37,20 +46,25 @@ function isLoggedIn(isLogged) {
 }
 
 function getUserDetails(value) {
-  console.log(value);
   return new Promise((resolve, reject) => {
     try {
-      if (value > 0.5) {
-        resolve(console.log("tried and passed"), { name: "John", age: 24 });
-      }
+      resolve(myClass.getUserDetails(value));
     } catch {
-
-      this.myError = new myError("Error");
-      return reject(console.log("ERR"), this.myError);
+      reject(myClass.myError("User ID is not correct!"));
     }
   });
 }
 
 isLoggedIn(isLogged)
-  //   .then((val) => getUserDetails(val))
-  .then((val) => console.log(val));
+  .then((val) => getUserDetails(val))
+  .then((val) => {
+    isLogged
+      ? console.log(`Welcome your ID is ${myClass.isUserLoggedIn(isLogged)}`)
+      : console.log("wubba lubba dub");
+    getUserDetails(myClass.isUserLoggedIn(isLogged))
+      ? console.log(`Hello ${val.name} how does it feels like being at ${val.age}?`)
+      : console.log("wubba lubba dub");
+  });
+
+
+  // I don't want to make it more confusing so I will leave at this point. I have so many ideas to make it different but thats enough :D
