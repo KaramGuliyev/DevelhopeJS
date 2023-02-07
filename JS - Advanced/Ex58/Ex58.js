@@ -28,3 +28,7 @@ function getUser() {
 }
 
 // Starting from the previous exercise, write a method that recovers the data saved in localStorage and prints them in the console.
+
+
+// https://github.com/KaramGuliyev/DevelhopeJS/tree/main/JS%20-%20Advanced/Ex58
+// I could make it more better cases but thats more than enough I think.
