@@ -5,7 +5,10 @@ let firstName = document.getElementById("firstName");
 let lastName = document.getElementById("lastName");
 let age = document.getElementById("age");
 
-console.log(firstName.value);
+let form_input = document.getElementsByClassName("form-input");
 
-// IT'S A COPY OF EX59 !
+console.log(firstName.lastName);
+
+console.log(form_input);
+
 
