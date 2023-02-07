@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+
+      }
+      .buttons,
+      .userDiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid gray;
+        width: 25%;
+        height: 20vh;
+      }
+      button {
+        margin: 1rem;
+      }
+      .user {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid lightgray;
+      }
+      .username, .age {
+        flex-direction: column;
+        padding: 2rem;
+        text-align: center;
+      }
+      .footer {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="buttons">
+        <div class="button1">
+          <button onclick="setUser()">setUser</button>
+        </div>
+        <div class="button2">
+          <button onclick="clearUser()">clearUser</button>
+        </div>
+        <div class="button3">
+          <button onclick="getUser()">getUser</button>
+        </div>
+      </div>
+      <div class="userDiv">
+        <div class="user">
+          <div class="username">
+            <label>User Name</label>
+            <h5 id="username"></h5>
+        </div>
+        <div class="age">
+            <label>User Age</label>
+            <h5 id="age"></h5>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer"><h1 id="state"> WAITING </h1></div>
+  </body>
+  <script src="./Ex58.js"></script>
+</html>
