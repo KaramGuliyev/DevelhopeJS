@@ -6,4 +6,6 @@ function sum(...nums) {
 }
 
 const numbers = [1, 2, 3];
-console.log(sum(numbers[0], numbers[1], numbers[2]));
+console.log(sum(...numbers));
+
+// "You should spread the numbers variable when you call the sum() function in your last line."

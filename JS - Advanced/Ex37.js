@@ -22,11 +22,11 @@ class Circle {
 
 class AreaCalculator {
   static calculate(prop) {
-    if (prop === square) {
+    if (prop instanceof Square) {
       return square.side ** 2;
-    } else if (prop === rectangle) {
+    } else if (prop instanceof Rectangle) {
       return rectangle.height * rectangle.width;
-    } else if (prop === circle) {
+    } else if (prop instanceof Circle) {
       return Math.PI * circle.radius ** 2;
     }
   }
@@ -39,3 +39,7 @@ const circle = new Circle(5);
 console.log(AreaCalculator.calculate(square));
 console.log(AreaCalculator.calculate(rectangle));
 console.log(AreaCalculator.calculate(circle));
+
+// "Instead of comparing the variables to each other, use prop instanceof Square, so you check if the value you give the function is of the type Square, or Circle, etc."
+
+

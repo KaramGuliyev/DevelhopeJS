@@ -7,10 +7,7 @@ class Person {
   }
 
   static fromObject(obj) {
-    return {
-      firstName: obj.firstName,
-      lastName: obj.lastName,
-    };
+    return new Person(obj.firstName, obj.lastName);
   }
 }
 
@@ -21,5 +18,11 @@ const obj = {
 
 // console.log(Person.fromObject(obj));
 
-const person = Person.fromObject(obj);
-console.log(person.firstName + " " + person.lastName);
+const personObj = Person.fromObject(obj)
+
+console.log(personObj);
+
+// console.log(person.firstName + " " + person.lastName);
+
+// "You have to return a new Person object from the fromObject function. Right now you return a literal object, that's not of type Person.
+// Use the "new" keyword inside the fromObject function"
