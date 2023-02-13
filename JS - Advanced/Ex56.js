@@ -64,7 +64,9 @@ isLoggedIn(isLogged)
     getUserDetails(myClass.isUserLoggedIn(isLogged))
       ? console.log(`Hello ${val.name} how does it feels like being at ${val.age}?`)
       : console.log("wubba lubba dub");
-  });
+  }).catch((err) => {
+    new Error(err)
+  })
 
 
-  // I don't want to make it more confusing so I will leave at this point. I have so many ideas to make it different but thats enough :D
+  // I just added catch and leaved the myClass
